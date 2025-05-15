@@ -6,8 +6,8 @@ def bhaskara(a:float, b:float, c:float):
     if disc < 0:
         disc *= -1
         return f"[x, yi] = {[-b/(2*a), math.sqrt(disc)/(2*a)]}"
-    real1 = (-b + disc)/(2*a)
-    real2 = (-b - disc)/(2*a)
+    real1 = (-b + math.sqrt(disc))/(2*a)
+    real2 = (-b - math.sqrt(disc))/(2*a)
     return f"x_1(+): {real1}; x_2(-): {real2}"
 
 a = float(input("A: "))
