@@ -27,7 +27,7 @@ git clone https://github.com/JuaniRaggio/MicroPythonMS.git
 
 3. Choose which programs you would like to add and just add those
 
-> [!WARNING] Attention
+> [!WARNING]
 > Some of this programs need you to edit them each time you use them, such as
 > copying the matrix you wish to have, pre-calculate functions such as
 > t-student, invNorm, etc. I didn't implement those because every programable
