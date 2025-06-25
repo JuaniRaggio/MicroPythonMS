@@ -21,9 +21,9 @@ git clone https://github.com/JuaniRaggio/MicroPythonMS.git
 
 2. Connect your calculator using a USB
 
-If nothing happens once you plug in your calculator, you probably need the
-official app for your calculator. There you can get the instructions to add
-this programs to yours
+    If nothing happens once you plug in your calculator, you probably need the
+    official app for your calculator. There you can get the instructions to add
+    this programs to yours
 
 3. Choose which programs you would like to add and just add those
 
