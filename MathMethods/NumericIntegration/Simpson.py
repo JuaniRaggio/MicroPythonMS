@@ -36,6 +36,8 @@ def simpson_compuesto(f, a, b, n, show_table):
         xi = a + i * h
         coef = 4 if i % 2 != 0 else 2
         suma += coef * f(xi)
+        if i % 4 == 0 and i != 0:
+            input("Enter to continue")
         if show_table:
             print(i, "  ", round(xi, DD), "  ", round(f(xi), DD), "  ", coef)
     

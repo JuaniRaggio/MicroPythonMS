@@ -1,5 +1,10 @@
 import math
 
+DD = 5
+
+def f(t, y):
+    return math.sin(t - y + 1)**2
+
 def heun(f, a, b, y0, h):
     n = int((b - a) / h)
     t = a
@@ -10,9 +15,6 @@ def heun(f, a, b, y0, h):
         y += (h / 2) * (k1 + k2)
         t += h
     return y
-
-def f(t, y):
-    return math.sin(t - y + 1)**2
 
 # Paso h = 0.2
 y_02 = heun(f, 0, 1, 0, 0.2)

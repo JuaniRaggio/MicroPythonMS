@@ -2,6 +2,10 @@
 x_0 = 0
 eTolerance = 0.0001
 
+def await_if_4(n):
+    if n % 4 == 0 and n != 0:
+        input("Enter to continue")
+
 def f(x):
     return None
 
@@ -23,6 +27,7 @@ def newton(f, f_prime, x0, e):
 
         error = abs(xk - x[k])
 
+        await_if_4(k)
         print(xk, error)
         k += 1
 

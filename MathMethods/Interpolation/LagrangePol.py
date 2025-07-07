@@ -24,6 +24,8 @@ def delta_poly(i, X, x):
     return p
 
 def lagrange_poly(X, Y, x):
+    if X.len() != Y.len():
+        return None
     L = 0
     for i in range(len(Y)):
         L += Y[i] * delta_poly(i, X, x)

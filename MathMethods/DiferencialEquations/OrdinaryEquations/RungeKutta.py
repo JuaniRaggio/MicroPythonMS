@@ -6,6 +6,7 @@ y_0 = 1
 a = -1
 b = 1
 interval = [a, b]
+coef = None
 
 def f(t, y):
     return y
@@ -50,5 +51,7 @@ def runge_kutta_forth_order(interval, F, y_0, step_size):
         y[i+1] = y[i] + (k1 + 2*k2 + 2*k3 + k4)/6
     return y
 
-print(runge_kutta_order3(f, y_0, step_size, steps))
+# print("RK2: \n", runge_kutta_order2(f, y_0, step_size, steps, coef))
+print("RK3: \n", runge_kutta_order3(f, y_0, step_size, steps))
+# print("RK4: \n", runge_kutta_forth_order(f, y_0, step_size, steps))
 

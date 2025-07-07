@@ -1,3 +1,5 @@
+n = 8
+
 def gauss_seidel(n):
     x = 0.0
     y = 0.0
@@ -17,7 +19,9 @@ def gauss_seidel(n):
 
         print("Iter " + str(i) + ": x=" + str(round(x, 6)) + ", y=" + str(round(y, 6)) +
               ", z=" + str(round(z, 6)) + ", w=" + str(round(w, 6)))
+        if i == 4:
+            input("Enter to continue")
 
     return x, y, z, w
 
-gauss_seidel(8)
+gauss_seidel(n)

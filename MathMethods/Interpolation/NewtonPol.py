@@ -1,3 +1,4 @@
+x_eval = 2.5
 X = [1, 2, 3]
 Y = [1, 4, 9]
 
@@ -13,12 +14,12 @@ def newton_coeff(X, Y):
         M.append(next)
     return [M[i][0] for i in range(n)]
 
-def newton_poly(X, Y, x):
+def newton_poly(X, Y, x_eval):
     coeff = newton_coeff(X, Y)
     n = len(coeff)-1
     q = coeff[n]
     for i in range(n):
-        q = coeff[n-i-1] + q*(x-X[n-i-1])
+        q = coeff[n-i-1] + q*(x_eval-X[n-i-1])
     return q
 
-print(newton_poly(X, Y, 2.5))
+print(newton_poly(X, Y, x_eval))
