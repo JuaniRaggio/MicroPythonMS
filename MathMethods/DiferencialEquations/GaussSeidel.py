@@ -19,7 +19,7 @@ def gauss_seidel(n):
 
         print("Iter " + str(i) + ": x=" + str(round(x, 6)) + ", y=" + str(round(y, 6)) +
               ", z=" + str(round(z, 6)) + ", w=" + str(round(w, 6)))
-        if i == 4:
+        if i % 4 == 0 and i != 0:
             input("Enter to continue")
 
     return x, y, z, w
