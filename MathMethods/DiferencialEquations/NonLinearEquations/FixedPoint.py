@@ -13,10 +13,10 @@ def await_if_4(n):
     if n % 4 == 0 and n != 0:
         input("Enter to continue")
 
-def derivative_approx(g, x, h=1e-5):
+def derivative_approx(g, x, h):
     return (g(x + h) - g(x - h)) / (2 * h)
 
-def verify_convergence(g, x0, h=1e-5):
+def verify_convergence(g, x0, h):
     g_prime = derivative_approx(g, x0, h)
     print("g'(x0) =", g_prime)
     if abs(g_prime) < 1:
@@ -36,11 +36,15 @@ def fixed_point(g, x0, e):
     k = 1
     print("Iter  Aprox  Error")
     while error > e:
+        i = 0
         xk = g(x[k-1])
         x.append(xk)
         error = abs(x[k] - x[k-1])
+        if i % 4 == 0 and i != 0:
+            input("Enter to continue")
         print(k, "  ", round(xk, DD), "  ", round(error, DD))
         await_if_4(k)
+        i += 1
         k += 1
     print("Number of iterations:", k)
 

@@ -1,22 +1,28 @@
+# Primero verificar que intervalo verifica bolzano
+# luego asignarlo a L_x y R_x y descomentar la ultima
+# linea
 DD = 5
 L_x = 1
 R_x = L_x + 1
+cte = 1
 eTolerance = 0.001
 
 def f(x):
     return x**3 + 2 * x ** 2 -5 * x - 4
 
-def look_for_interval_for_bolzano(f, cte=1, start=-10, end=10):
+def look_interval_for_bolzano(f, cte, start, end):
     for a in range(start, end):
         if verify_bolzano(f, cte, cte + 1):
             print("The interval: (", a, ", ", a + cte, ") verifies bolzano")
+
+look_interval_for_bolzano(f, cte, L_x, R_x)
 
 def await_if_4(n):
     if n % 4 == 0 and n != 0:
         input("Enter to continue")
 
 def verify_bolzano(f, a, b):
-    return f(a) * f(b) > 0
+    return f(a) * f(b) < 0
 
 def biseccion(f, a, b, eTolerance):
 
@@ -45,4 +51,4 @@ def biseccion(f, a, b, eTolerance):
     print("x root (c) in last step:", round(c_aprox[-1], DD))
     print("Number of iterations: ", k, ", this means ", k + 1, " steps")
 
-biseccion(f, L_x, R_x, eTolerance)
+# biseccion(f, L_x, R_x, eTolerance)
