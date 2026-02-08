@@ -7,6 +7,7 @@ P = [
 # Evolucion / Paso
 p0 = [1/3, 1/3, 1/3]
 
+DIGITS = 4
 
 def matmul(A, B):
     filas = len(A)
@@ -18,7 +19,7 @@ def matmul(A, B):
         for j in range(cols):
             suma = 0
             for k in range(comun):
-                suma += A[i][k] * B[k][j]
+                suma += round(A[i][k] * B[k][j], DIGITS)
             fila.append(suma)
         resultado.append(fila)
     return resultado
@@ -34,7 +35,7 @@ def vect_matmul(v, M):
     for j in range(len(M[0])):
         suma = 0
         for i in range(len(v)):
-            suma += v[i] * M[i][j]
+            suma += round(v[i] * M[i][j], DIGITS)
         resultado.append(suma)
     return resultado
 
@@ -91,10 +92,11 @@ def calcular_periodo(P, estado, max_pasos=20):
 suma = 0
 
 for fila in P:
+    suma = 0
     for col in fila:
         suma += col
     if suma != 1:
-        print("Ojo gordo, la suma de la fila", fila, "no es 1, es", sum, "modificala desde el codigo")
+        print("Ojo gordo, la suma de la fila", fila, "no es 1, es", suma, "modificala desde el codigo")
 
 n = int(input("Ingrese la cantidad de pasos (n): "))
 
@@ -102,17 +104,21 @@ Pn = matpow(P, n)
 print("La potencia", n, "-esima de la matriz dada:")
 for fila in Pn:
     print(fila)
+input("Enter continuar...")
 
 p_n = vect_matmul(p0, Pn)
 print("Distribucion al paso", n, ":", p_n)
+input("Enter continuar...")
 
 pi = estacionario_manual(P)
 print("Estado estacionario:", pi)
+input("Enter continuar...")
 
 C = comunicabilidad(P)
 print("Matriz de comunicabilidad:")
 for fila in C:
     print(fila)
+input("Enter continuar...")
 
 if es_irreducible(C):
     print("La cadena es irreducible")
@@ -122,3 +128,4 @@ else:
 for i in range(len(P)):
     d = calcular_periodo(P, i)
     print("Periodo del estado", i, ":", d)
+input("Enter continuar...")

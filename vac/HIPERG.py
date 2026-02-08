@@ -10,6 +10,9 @@ n = int(input("Extraction size: "))
 # x: Amount of successes in extraction
 x = int(input("Successes in extraction: "))
 
+# mu_X = E[X] = n K/N
+# sigma_X^2 = V[X] = mu_X (1 - K/N) (N - n)/(N - 1)
+
 def fact(num):
     res = 1
     while num > 0:
@@ -41,4 +44,3 @@ def hipercdf():
 
 print("pdf: ", hiperpdf())
 print("cdf: ", hipercdf())
-
